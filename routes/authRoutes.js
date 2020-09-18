@@ -1,4 +1,3 @@
-//jshint esversion:6
 const passport = require("passport");
 
 module.exports = (app) => {
