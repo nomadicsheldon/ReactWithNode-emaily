@@ -9,6 +9,7 @@ const passport = require("passport");
 const bodyParser = require("body-parser");
 // ==> order
 require("./models/User"); // 1
+require("./models/Survey"); // 1
 require("./services/passport"); // 2
 
 mongoose.connect(process.env.MONGO_URI, {
@@ -33,6 +34,7 @@ app.use(passport.session());
 // ############################## routes ##############################
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
+require("./routes/surveyRoutes")(app);
 // ############################## port setting ##############################
 if (process.env.NODE_ENV === "production") {
   // Express will serve up production assets
